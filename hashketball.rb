@@ -86,6 +86,57 @@ end
  
  
 
+# write a method that will give me all the players names in an array....
+
+def all_players 
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+  home_players + away_players 
+end 
+
+
+
+
+
+# write a method that will give me all the players with more than 10 points....
+
+def more_than_10
+  all_players.collect do |player|
+    if player[:points] > 10
+     player
+    
+      
+    end 
+     
+
+      
+    
+
+
+
+# write the same 2 methods as above, but with the each method
+
+def all_players 
+  all_players = []
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |name|
+      all_players << name
+    end 
+    return all_players
+  end 
+  
+  def more_than_10
+    more_than_10_array = []
+    game_hash.each do |location, team_info|
+      team_info.each do |name, player_stats|
+        if player_stats[:points] > 10 
+          name 
+        more_than_10 << name
+      end 
+    return more_than_10_array
+  end 
+
+
 
     
 
